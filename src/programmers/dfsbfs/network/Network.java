@@ -39,14 +39,13 @@ class Solution {
 		return answer;
 	}
 	
-	boolean[] dfs(int[][] computers, int i, boolean[] visited) {
-		visited[i] = true;
+	void dfs(int[][] computers, int start, boolean[] visited) {
+		visited[start] = true;
 		
 		for (int j = 0; j < computers.length; j++) {
-			if (i != j && computers[i][j] == 1 && visited[j] == false) {
-				visited = dfs(computers, j, visited);
+			if (start != j && computers[start][j] == 1 && visited[j] == false) {
+				dfs(computers, j, visited);
 			}
 		}
-		return visited;
 	}
 }
