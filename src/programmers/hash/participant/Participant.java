@@ -1,9 +1,12 @@
 package programmers.hash.participant;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 완주하지 못한 선수
- *  level 1
- *  https://programmers.co.kr/learn/courses/30/lessons/42576
+ * level 1
+ * https://programmers.co.kr/learn/courses/30/lessons/42576
  */
 public class Participant {
     public static void main(String[] args) {
@@ -24,18 +27,20 @@ public class Participant {
 
 class Solution {
     public String solution(String[] participant, String[] completion) {
-        for (int i = 0; i < participant.length; i++) {
-            for (int j = 0; j < completion.length; j++) {
-                if (participant[i].equals(completion[j])) {
-                    participant[i] = "";
-                    completion[j] = "";
-                    break;
-                }
-            }
-            if (!"".equals(participant[i])) {
-                return participant[i];
+        Map<String, Integer> ptMap = new HashMap<>();
+        for (String s : participant) {
+            ptMap.put(s, ptMap.getOrDefault(s, 0) + 1);
+        }
+        for (String s : completion) {
+            ptMap.put(s, ptMap.get(s) - 1);
+        }
+
+        for (String key : ptMap.keySet()) {
+            if (ptMap.get(key) != 0) {
+                return key;
             }
         }
         return "";
     }
+
 }
