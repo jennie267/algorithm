@@ -25,7 +25,16 @@ public class BestAlbum {
         for (int i : result) {
             System.out.println(i);              // [4, 1, 3, 0]
         }
-
+        System.out.println("=====================");
+        String[] genres2 = {"A", "A", "B", "A", "B", "B", "A", "A", "A", "A"};
+        int[] plays2 = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+        int[] result2 = solution.solution(genres2, plays2);
+        for (int i : result2) {
+            System.out.println(i);              // [0, 1, 2, 4]
+        }
+        System.out.println("=====================");
+        
+        
 
         /*속한 노래가 많이 재생된 장르를 먼저 수록합니다.
         장르 내에서 많이 재생된 노래를 먼저 수록합니다.
@@ -37,7 +46,7 @@ public class BestAlbum {
 
 class Solution {
     public int[] solution(String[] genres, int[] plays) {
-        int[] answer = new int[genres.length/2 * 2];
+        List<Integer> answer = new ArrayList<Integer>();
         
         Map<String, Integer> albumMap = new HashMap<String, Integer>();
         for (int i = 0; i < genres.length; i++) {
@@ -53,8 +62,8 @@ class Solution {
         });
         
         
-        int cnt = 0;
         for(Entry<String, Integer> entry : sortList) {
+            int cnt = 0;
             String genre = entry.getKey();
             List<Integer> playList = new ArrayList<Integer>();
             for (int i = 0; i < genres.length; i++) {
@@ -65,9 +74,9 @@ class Solution {
             Collections.sort(playList, Collections.reverseOrder());
             int i = 0;
             Stack<Integer> stack = new Stack<Integer>();
-            while (playList.size() != stack.size() && cnt < answer.length) {
+            while (playList.size() != stack.size() && cnt < 2) {
                 if (genres[i].equals(genre) && plays[i] == playList.get(stack.size())) {
-                    answer[cnt] = i;
+                    answer.add(i);
                     cnt++;
                     stack.add(i);
                 }
@@ -75,6 +84,6 @@ class Solution {
             }
             
         }
-        return answer;
+        return answer.stream().mapToInt(Integer::intValue).toArray();
     }
 }
