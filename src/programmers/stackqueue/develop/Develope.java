@@ -54,7 +54,7 @@ class Solution {
         List<Integer> answer = new ArrayList<Integer>();
         Queue<Job> job = new LinkedList<Solution.Job>();
         for (int i = 0; i < progresses.length; i++) {
-            job.add(new Job(progresses[i], speeds[i]));
+            job.offer(new Job(progresses[i], speeds[i]));
         }
         int count = 0;
         int days = 0;
