@@ -59,7 +59,7 @@ class Solution {
         int count = 0;
         int days = 0;
         while (!job.isEmpty()) {
-            int jobDay = job.remove().countDays();
+            int jobDay = job.poll().countDays();
             if (days == 0) {
                 count++;
                 days = jobDay;
