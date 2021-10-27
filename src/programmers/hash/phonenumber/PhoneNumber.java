@@ -10,12 +10,9 @@ import java.util.Arrays;
 public class PhoneNumber {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String[] phoneBook1 = {"119", "97674223", "1195524421"};
-        System.out.println(solution.solution(phoneBook1));      // false
-        String[] phoneBook2 = {"123", "456", "789"};
-        System.out.println(solution.solution(phoneBook2));      // true
-        String[] phoneBook3 = {"12", "123", "1235", "567", "88"};
-        System.out.println(solution.solution(phoneBook3));      // false
+        System.out.println(solution.solution(new String[] {"119", "97674223", "1195524421"}));      // false
+        System.out.println(solution.solution(new String[] {"123", "456", "789"}));      // true
+        System.out.println(solution.solution(new String[] {"12", "123", "1235", "567", "88"}));      // false
     }
 }
 

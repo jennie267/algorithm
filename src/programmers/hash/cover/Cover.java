@@ -11,10 +11,8 @@ import java.util.Map;
 public class Cover {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String[][] clothes1 = {{"yellowhat", "headgear"}, {"bluesunglasses", "eyewear"}, {"green_turban", "headgear"}};
-        System.out.println(solution.solution(clothes1));        // 5
-        String[][] clothes2 = {{"crowmask", "face"}, {"bluesunglasses", "face"}, {"smoky_makeup", "face"}};
-        System.out.println(solution.solution(clothes2));        // 3
+        System.out.println(solution.solution(new String[][] {{"yellowhat", "headgear"}, {"bluesunglasses", "eyewear"}, {"green_turban", "headgear"}}));        // 5
+        System.out.println(solution.solution(new String[][] {{"crowmask", "face"}, {"bluesunglasses", "face"}, {"smoky_makeup", "face"}}));        // 3
 
     }
 }

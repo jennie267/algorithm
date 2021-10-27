@@ -12,8 +12,7 @@ public class TargetNumber {
 
 	public static void main(String[] args) {
 		Solution solution = new Solution();
-		int[] numbers = { 1, 1, 1, 1, 1 };
-		System.out.println(solution.solution(numbers, 3)); // 5
+		System.out.println(solution.solution(new int[] { 1, 1, 1, 1, 1 }, 3)); // 5
 
 	}
 

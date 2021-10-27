@@ -11,17 +11,9 @@ import java.util.Map;
 public class Participant {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String[] participant1 = {"leo", "kiki", "eden"};
-        String[] completion1 = {"eden", "kiki"};
-        System.out.println(solution.solution(participant1, completion1));   // leo
-
-        String[] participant2 = {"marina", "josipa", "nikola", "vinko", "filipa"};
-        String[] completion2 = {"josipa", "filipa", "marina", "nikola"};
-        System.out.println(solution.solution(participant2, completion2));   // vinko
-
-        String[] participant3 = {"mislav", "stanko", "mislav", "ana"};
-        String[] completion3 = {"stanko", "ana", "mislav"};
-        System.out.println(solution.solution(participant3, completion3));   // mislav
+        System.out.println(solution.solution(new String[] {"leo", "kiki", "eden"}, new String[] {"eden", "kiki"}));   // leo
+        System.out.println(solution.solution(new String[] {"marina", "josipa", "nikola", "vinko", "filipa"}, new String[] {"josipa", "filipa", "marina", "nikola"}));   // vinko
+        System.out.println(solution.solution(new String[] {"mislav", "stanko", "mislav", "ana"}, new String[] {"stanko", "ana", "mislav"}));   // mislav
     }
 }
 

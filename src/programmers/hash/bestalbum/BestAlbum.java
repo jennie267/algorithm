@@ -19,16 +19,12 @@ public class BestAlbum {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String[] genres = {"classic", "pop", "classic", "classic", "pop"};
-        int[] plays = {500, 600, 150, 800, 2500};
-        int[] result = solution.solution(genres, plays);
+        int[] result = solution.solution(new String[] {"classic", "pop", "classic", "classic", "pop"}, new int[] {500, 600, 150, 800, 2500});
         for (int i : result) {
             System.out.println(i);              // [4, 1, 3, 0]
         }
         System.out.println("=====================");
-        String[] genres2 = {"A", "A", "B", "A", "B", "B", "A", "A", "A", "A"};
-        int[] plays2 = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-        int[] result2 = solution.solution(genres2, plays2);
+        int[] result2 = solution.solution(new String[] {"A", "A", "B", "A", "B", "B", "A", "A", "A", "A"}, new int[] {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1});
         for (int i : result2) {
             System.out.println(i);              // [0, 1, 2, 4]
         }

@@ -12,13 +12,9 @@ public class WordDfs {
 
 	public static void main(String[] args) {
 		Solution solution = new Solution();
-		String begin = "hit";
-		String target = "cog";
-		String[] words1 = { "hot", "dot", "dog", "lot", "log", "cog" };
-		String[] words2 = { "hot", "dot", "dog", "lot", "log" };
-		System.out.println(solution.solution(begin, target, words1)); // 4
+		System.out.println(solution.solution("hit", "cog", new String[] {"hot", "dot", "dog", "lot", "log", "cog"})); // 4
 		Solution solution2 = new Solution();
-		System.out.println(solution2.solution(begin, target, words2)); // 0
+		System.out.println(solution2.solution("hit", "cog", new String[] {"hot", "dot", "dog", "lot", "log"})); // 0
 
 	}
 

@@ -12,14 +12,8 @@ public class Network {
 
 	public static void main(String[] args) {
 		Solution solution = new Solution();
-
-		int n1 = 3;
-		int[][] computers1 = { { 1, 1, 0 }, { 1, 1, 0 }, { 0, 0, 1 } };
-		System.out.println(solution.solution(n1, computers1)); // 2
-
-		int n2 = 3;
-		int[][] computers2 = { { 1, 1, 0 }, { 1, 1, 1 }, { 0, 1, 1 } };
-		System.out.println(solution.solution(n2, computers2)); // 1
+		System.out.println(solution.solution(3, new int[][] { { 1, 1, 0 }, { 1, 1, 0 }, { 0, 0, 1 } })); // 2
+		System.out.println(solution.solution(3, new int[][] {{ 1, 1, 0 }, { 1, 1, 1 }, { 0, 1, 1 }})); // 1
 
 	}
 
