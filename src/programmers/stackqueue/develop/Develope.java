@@ -15,17 +15,13 @@ public class Develope {
 
     public static void main(String[] args) {
         Solution solution1 = new Solution();
-        int[] progresses1 = {93, 30, 55};
-        int[] speeds1 = {1, 30, 5};
-        int[] result1 = solution1.solution(progresses1, speeds1);
+        int[] result1 = solution1.solution(new int[] {93, 30, 55}, new int[] {1, 30, 5});
         for (int i = 0; i < result1.length; i++) {
             System.out.println(result1[i]);
         }   // 2,1
         System.out.println("=======");
         Solution solution2 = new Solution();
-        int[] progresses2 = {95, 90, 99, 99, 80, 99};
-        int[] speeds2 = {1, 1, 1, 1, 1, 1};
-        int[] result2 = solution2.solution(progresses2, speeds2);
+        int[] result2 = solution2.solution(new int[] {95, 90, 99, 99, 80, 99}, new int[] {1, 1, 1, 1, 1, 1});
         for (int i = 0; i < result2.length; i++) {
             System.out.println(result2[i]);
         }   // 1,3,2

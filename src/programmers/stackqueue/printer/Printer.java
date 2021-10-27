@@ -13,13 +13,9 @@ public class Printer {
 
     public static void main(String[] args) {
         Solution solution1 = new Solution();
-        int[] priorities1 = {2, 1, 3, 2};
-        int location1 = 2;
-        System.out.println(solution1.solution(priorities1, location1));     // 1
+        System.out.println(solution1.solution(new int[] {2, 1, 3, 2}, 2));     // 1
         Solution solution2 = new Solution();
-        int[] priorities2 = {1, 1, 9, 1, 1, 1};
-        int location2 = 0;
-        System.out.println(solution2.solution(priorities2, location2));     // 5
+        System.out.println(solution2.solution(new int[] {1, 1, 9, 1, 1, 1}, 0));     // 5
         
 
     }
