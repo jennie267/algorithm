@@ -1,7 +1,7 @@
 package programmers.weekly.amusementfee;
 
 /**
- * 크레인 인형뽑기 게임
+ * 부족한 금액 계산하기
  * level 1
  * 위클리 챌린지
  * https://programmers.co.kr/learn/courses/30/lessons/82612
