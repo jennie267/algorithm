@@ -24,7 +24,7 @@ class Solution {
         int answer = 0;
 
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
-        Arrays.stream(scoville).forEach(i -> priorityQueue.offer(i));
+        Arrays.stream(scoville).forEach(priorityQueue::offer);
 
         while (priorityQueue.peek() < K) {
             if (priorityQueue.size() <2) return -1;
