@@ -24,16 +24,13 @@ class Solution {
         int answer = 0;
 
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
-        Arrays.stream(scoville).forEach(i -> {
-            System.out.println(i);
-            priorityQueue.offer(i);
-        });
+        Arrays.stream(scoville).forEach(i -> priorityQueue.offer(i));
 
         while (priorityQueue.peek() < K) {
             if (priorityQueue.size() <2) return -1;
 
-            int a = priorityQueue.peek();
-            int b = priorityQueue.peek();
+            int a = priorityQueue.poll();
+            int b = priorityQueue.poll();
             priorityQueue.offer(a + b * 2);
             answer++;
         }
