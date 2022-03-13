@@ -26,12 +26,8 @@ class Solution {
 
         int cursor = 0;
         for (int[] command : commands) {
-            int i = command[0]-1;
-            int j = command[1];
-            int k = command[2]-1;
-
-            int[] newArray = Arrays.stream(array, i, j).sorted().toArray();
-            answer[cursor++] = newArray[k];
+            int[] newArray = Arrays.stream(array, command[0]-1, command[1]).sorted().toArray();
+            answer[cursor++] = newArray[command[2]-1];
         }
 
         return answer;
