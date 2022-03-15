@@ -2,7 +2,6 @@ package programmers.sort.biggestnumber;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -25,23 +24,18 @@ public class BiggestNumber {
 
 class Solution {
     public String solution(int[] numbers) {
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
         List<String> list = new ArrayList<>();
         Arrays.stream(numbers).forEach(num -> list.add(Integer.toString(num)));
-        list.sort(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (o2+o1).compareTo(o1+o2);
-            }
-        });
+        list.sort((o1, o2) -> (o2+o1).compareTo(o1+o2));
 
         if ("0".equals(list.get(0))) {
             return "0";
         }
 
         for (String num : list) {
-            answer += num;
+            answer.append(num);
         }
-        return answer;
+        return answer.toString();
     }
 }
