@@ -49,7 +49,7 @@ class Solution {
         if (bCnt > max) max = bCnt;
         if (cCnt > max) max = cCnt;
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         if (aCnt == max) sb.append("1,");
         if (bCnt == max) sb.append("2,");
         if (cCnt == max) sb.append("3");
