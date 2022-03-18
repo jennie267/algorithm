@@ -2,8 +2,6 @@ package programmers.sort.hindex;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
 /**
  * H-Index
@@ -28,6 +26,12 @@ public class HIndex {
 
         int[] citations5 = new int[]{0, 1, 2};
         System.out.println(solution.solution(citations5));   // 1
+
+        int[] citations6 = new int[]{10, 10, 10, 10, 10};
+        System.out.println(solution.solution(citations6));   // 5
+
+        int[] citations7 = new int[]{0, 0, 0, 0, 0};
+        System.out.println(solution.solution(citations7));   // 0
     }
 }
 
@@ -36,13 +40,13 @@ class Solution {
         Integer[] cis = Arrays.stream(citations).boxed().toArray(Integer[]::new);
         Arrays.sort(cis, Collections.reverseOrder());
 
-        int i = 0;
+        int i = 1;
         int h = 0;
         while (i <= citations.length) {
+            if (i > cis[i-1]) return h;
+            h = i;
             i++;
-            if (i < cis[i]) return h;
-            h = cis[i];
         }
-        return 0;
+        return h;
     }
 }
